@@ -1,0 +1,84 @@
+.button {
+  background: none;
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+  display: inline-block;
+  text-align: center;
+  width: 150px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.button::before {
+  background: rgba(200, 200, 200, 0.8);
+  bottom: -0.1em;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0.5em;
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.button::after {
+  background: -webkit-linear-gradient(top, magenta, white 90%);
+  background: linear-gradient(to bottom, magenta, white 90%);
+  background-size: 100% 500%;
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  -webkit-transition: all 5s cubic-bezier(0, 0.5, 0.5, 1);
+  transition: all 5s cubic-bezier(0, 0.5, 0.5, 1);
+  z-index: -1;
+  border-radius: 5px;
+}
+
+.button:hover {
+  -webkit-animation: pulse 1s ease-out infinite;
+  animation: pulse 1s ease-out infinite;
+  text-decoration: none;
+  color: magenta;
+}
+
+.button:hover::after {
+  background-position: 0 100%;
+}
+
+.button:active {
+  -webkit-animation: none;
+  animation: none;
+  -webkit-transform: translateY(0.2em);
+  transform: translateY(0.2em);
+}
+
+.button:active::before {
+  -webkit-transform: translateY(-0.1em);
+  transform: translateY(-0.1em);
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: none;
+    transform: none;
+  }
+  50% {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+  }
+}
