@@ -32,31 +32,64 @@ hr {
   position: relative;
 }
 
-/* input style 01 */
+/* input style 1 */
 
-.form_input_st_01 {
+.form_input_st_1 {
   width: 300px;
   border: 1px solid #333;
   border-radius: 5px;
   padding: 12px 20px;
 }
 
-.form_label_st_01 {
+.form_label_st_1 {
   position: absolute;
   left: 10px;
   top: -10px;
   padding: 0 10px;
 }
 
-/* end input style 01 */
+/* end input style 1 */
 
-/* input style 02 */
+/* input style 2 */
 
-.form_input_st_02 {
+.form_input_st_2 {
   width: 300px;
   outline: 0;
   border-width: 0 0 2px;
   padding: 12px 20px;
 }
 
-/* end input style 02 */
+/* end input style 2 */
+
+/* input style 3 */
+
+.form_input_st_3 {
+  width: 300px;
+  outline: 0;
+  border-width: 2px 0;
+  padding: 12px 20px;
+}
+
+/* end input style 3 */
+
+/* input style 4 */
+
+.form_input_st_4 {
+  width: 300px;
+  outline: 0;
+  border-width: 0 2px 0;
+  padding: 12px 20px;
+}
+
+/* end input style 4 */
+
+/* input style 5 */
+
+.form_input_st_5 {
+  width: 300px;
+  outline: 0;
+  border-width: 0 0 0 5px;
+  padding: 12px 20px;
+}
+
+/* end input style 5 */
