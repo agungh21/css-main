@@ -8,6 +8,14 @@
   text-align: center;
 }
 
+:root {
+  --white-clr: #fff;
+  --gray-clr: #7a7a7a;
+  --btn-wd-d: 100px;
+  --btn-hg-d: 35px;
+  --btn-fs: 14px;
+}
+
 .container {
   position: relative;
   display: grid;
@@ -26,11 +34,19 @@
 }
 
 hr {
-  color: #7a7a7a;
+  color: var(--gray-clr);
 }
 
 .btn {
-  border: none;
+  background: var(--white-clr);
+  border: 1px solid var(--gray-clr);
+  cursor: pointer;
+  padding: 5px;
+  color: var(--gray-clr);
+  border-radius: 5px;
+  width: var(--btn-wd-d);
+  height: var(--btn-hg-d);
+  font-size: var(--btn-fs);
 }
 
 /* button power */
@@ -53,7 +69,7 @@ input[type="checkbox"]#power {
 input[type="checkbox"]#power:after {
   font-family: FontAwesome;
   content: "\f011";
-  color: #7a7a7a;
+  color: var(--gray-clr);
   font-size: 35px;
 }
 
@@ -71,21 +87,54 @@ input[type="checkbox"]#power:checked:after {
 /* end button power */
 
 /* button style 01 */
-.btn-st-01 {
-  background: #fff;
-  border: 1px solid #7a7a7a;
-  cursor: pointer;
-  padding: 5px;
-  color: #7a7a7a;
-  border-radius: 5px;
-  width: 100px;
-  height: 35px;
-}
 
 .btn-st-01:hover {
-  background: #7a7a7a;
-  border: 1px solid #fff;
-  color: #fff;
+  background: var(--gray-clr);
+  border: 1px solid var(--white-clr);
+  color: var(--white-clr);
   border: none;
 }
 /* end button style 01 */
+
+/* button style 02 */
+.btn-st-02 {
+  overflow: hidden;
+  transition: 0.6s;
+}
+.btn-st-02:first-child {
+  color: var(--gray-clr);
+  border-color: var(--gray-clr);
+}
+.btn-st-02:before,
+.btn-st-02:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  filter: blur(30px);
+  opacity: 0.4;
+  transition: 0.6s;
+}
+.btn-st-02:before {
+  width: 60px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.btn-st-02:after {
+  width: 30px;
+  background: rgba(255, 255, 255, 0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+.btn-st-02:hover:before,
+.btn-st-02:hover:after {
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+.btn-st-02:hover {
+  color: var(--white-clr);
+}
+.btn-st-02:hover:first-child {
+  background: var(--gray-clr);
+}
+/* end button style 02 */
