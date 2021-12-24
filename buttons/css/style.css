@@ -11,10 +11,13 @@
 
 :root {
   --white-clr: #fff;
-  --gray-clr: #333;
+  --black-clr: #333;
   --btn-wd-d: 100px;
   --btn-hg-d: 35px;
   --btn-fs: 14px;
+  --btn-rd: 5px;
+  --btn-bd-d: 1px solid var(--black-clr);
+  --btn-cursor: pointer;
 }
 
 .container {
@@ -37,15 +40,15 @@
 }
 
 hr {
-  color: var(--gray-clr);
+  color: var(--black-clr);
 }
 
 .btn {
   background: var(--white-clr);
-  border: 1px solid var(--gray-clr);
-  cursor: pointer;
-  padding: 5px;
-  color: var(--gray-clr);
+  border: var(--btn-bd-d);
+  cursor: var(--btn-cursor);
+  padding: var(--btn-rd);
+  color: var(--black-clr);
   border-radius: 5px;
   width: var(--btn-wd-d);
   height: var(--btn-hg-d);
@@ -72,7 +75,7 @@ input[type="checkbox"]#power {
 input[type="checkbox"]#power:after {
   font-family: FontAwesome;
   content: "\f011";
-  color: var(--gray-clr);
+  color: var(--black-clr);
   font-size: 35px;
 }
 
@@ -92,7 +95,7 @@ input[type="checkbox"]#power:checked:after {
 /* button style 01 */
 
 .btn-st-01:hover {
-  background: var(--gray-clr);
+  background: var(--black-clr);
   border: 1px solid var(--white-clr);
   color: var(--white-clr);
   border: none;
@@ -105,8 +108,8 @@ input[type="checkbox"]#power:checked:after {
   transition: 0.6s;
 }
 .btn-st-02 {
-  color: var(--gray-clr);
-  border-color: var(--gray-clr);
+  color: var(--black-clr);
+  border-color: var(--black-clr);
 }
 .btn-st-02:before,
 .btn-st-02:after {
@@ -138,13 +141,13 @@ input[type="checkbox"]#power:checked:after {
   color: var(--white-clr);
 }
 .btn-st-02:hover {
-  background: var(--gray-clr);
+  background: var(--black-clr);
 }
 /* end button style 02 */
 
 /* button glow */
 .btn-glow {
-  color: var(--gray-clr);
+  color: var(--black-clr);
 }
 .btn-glow:hover {
   background: linear-gradient(90deg, #03a9f4, #f441a5, #ffeb3b, #03a9f4);
@@ -183,3 +186,46 @@ input[type="checkbox"]#power:checked:after {
   }
 }
 /* end button glow */
+
+/* button 3d file */
+.btn-3d-flip {
+  border: none;
+  background: none;
+  position: relative;
+  display: inline-flex;
+}
+.btn-3d-flip a {
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform 0.25s;
+}
+.btn-3d-flip a:before,
+.btn-3d-flip a:after {
+  position: absolute;
+  content: "Submit";
+  height: var(--btn-hg-d);
+  width: var(--btn-wd-d);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--btn-bd-d);
+  border-radius: var(--btn-rd);
+  box-sizing: border-box;
+  font-size: 14px;
+  background: var(--white-clr);
+}
+.btn-3d-flip a:before {
+  color: var(--black-clr);
+  background: var(--white-clr);
+  transform: rotateY(0deg) translateZ(25px);
+}
+.btn-3d-flip a:after {
+  color: var(--white-clr);
+  background: var(--black-clr);
+  transform: rotateX(90deg) translateZ(25px);
+}
+.btn-3d-flip a:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+/* end button 3d file */
