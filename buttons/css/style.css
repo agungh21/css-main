@@ -6,6 +6,7 @@
   font-family: "Poppins";
   background-color: #ececec;
   text-align: center;
+  font-size: 20px;
 }
 
 :root {
@@ -23,7 +24,9 @@
 
 .row {
   position: relative;
-  margin: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 50px;
 }
 
 .col {
